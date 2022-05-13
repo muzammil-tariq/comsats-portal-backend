@@ -1,0 +1,7 @@
+- test auth 
+- switch branch to profile
+- add profiling
+- switch to project
+- add/view/update/delete/apply for a project/propose a project
+- switch to groups
+- add/view/update/delete/change lead/add supervisor
