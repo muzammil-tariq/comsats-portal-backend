@@ -39,7 +39,14 @@ const deliverableSchema: mongoose.Schema = new Schema({
     type: Schema.Types.ObjectId,
     Ref: "Student",
   },
+  faculty_id: {
+    type: Schema.Types.ObjectId,
+    ref: "Faculty",
+  },
+  comments: { type: String, require: false, default: "" },
+  markedObtain: { type: Boolean, require: false, default: false },
 });
+
 const Submitterd_deliverable = mongoose.model<IDeliverable>(
   "Submitterd_deliverable",
   deliverableSchema

@@ -1,5 +1,5 @@
 import { Deliverable } from "../../models";
-// import {} from "../../models";
+import { FacultyStudentRelationship } from "../../models";
 
 export const addDeleiverable = async (req: any, res: any, next: any) => {
   const { title, deadline, rubrics, faculty_id } = req.body;
@@ -31,8 +31,15 @@ export const getAllDeliverablesByStudentId = async (
   next: any
 ) => {
   try {
-    let fId = req.body.id;
-    const allDeliverables = await Deliverable.find({ faculty_id: fId });
+    const fId: any = await FacultyStudentRelationship.findOne({
+      student: req.params.id,
+    });
+
+    if (!fId) {
+      return res.send({ message: "No faculty is allocated to this student." });
+    }
+
+    const allDeliverables = await Deliverable.find({ faculty_id: fId.faculty });
     res.send(allDeliverables);
   } catch (error) {
     res.send(error);
