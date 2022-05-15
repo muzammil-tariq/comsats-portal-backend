@@ -5,9 +5,10 @@ import FacultyRouter from "./faculty";
 import ExternalRouter from "./external";
 import StudentProjectRouter from "./projects";
 import StudentGroupRouter from "./groups";
-import ComplaintRouter from "./complaint"
-import DeliverableRouter from "./Deliverable"
-import SubmittedDeliverable from "./SubmitttedDeliverable"
+import ComplaintRouter from "./complaint";
+import DeliverableRouter from "./Deliverable";
+import SubmittedDeliverable from "./SubmitttedDeliverable";
+import facultyStudentRelationship from "./FacultyStudentRelationship";
 
 const router = Router();
 
@@ -37,6 +38,7 @@ router.use("/deliverable", DeliverableRouter);
 
 // Submitted Deliverable router
 router.use("/submitted_deliverable", SubmittedDeliverable);
-
+// Submitted Deliverable router
+router.use("/faculty_student_relationship", facultyStudentRelationship);
 
 export default router;
