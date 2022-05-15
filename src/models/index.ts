@@ -4,18 +4,18 @@ import External from "./External";
 import Student from "./Student";
 import Project from "./Project";
 import StudentGroup from "./StudentGroup";
-import Deliverable from "./Deliverable";
-import Submitterd_deliverable from "./SubmittedDeliverables";
-import FacultyStudentRelationship from "./FacultyStudentRelationship";
+import Deliverable from "./Deliverable"
+import Submitterd_deliverable from "./SubmittedDeliverables"
+
+
 
 export {
-  Student,
-  Faculty,
-  External,
-  Coordinator,
-  Project,
-  StudentGroup,
-  Deliverable,
-  Submitterd_deliverable,
-  FacultyStudentRelationship,
-};
+    Student,
+    Faculty,
+    External,
+    Coordinator,
+    Project,
+    StudentGroup,
+    Deliverable,
+    Submitterd_deliverable
+}

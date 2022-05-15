@@ -15,6 +15,7 @@ const studentSchema: mongoose.Schema = new Schema(
   },
   { timestamps: true }
 );
+
 const deliverableSchema: mongoose.Schema = new Schema({
   title: {
     type: String,
@@ -32,7 +33,17 @@ const deliverableSchema: mongoose.Schema = new Schema({
     type: [studentSchema],
     required: false,
   },
+  comments: {
+    type: String,
+    default: "",
+    required: false,
+  },
+  faculty_id: {
+    type: Schema.Types.ObjectId,
+    ref: "Faculty",
+  },
 });
+
 const Deliverable = mongoose.model<IDeliverable>(
   "Deliverable",
   deliverableSchema
